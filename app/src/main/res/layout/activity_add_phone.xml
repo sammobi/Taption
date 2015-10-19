@@ -1,0 +1,219 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/black"
+    android:orientation="vertical"
+    tools:context="com.simpalm.android.taption.AddPhoneActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#0CBCF5"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/addphonenumbertv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:text="@string/addphonenumber"
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
+
+
+        <Button
+            android:id="@+id/nextbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="#DF5737"
+            android:text="Next"
+
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#2F2F2F"
+        android:padding="15dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Please enter your phone number so your friends\ncan find you on Taption"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/black"
+        android:orientation="horizontal"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/plusonetv"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.01"
+            android:gravity="left"
+            android:text="+1 "
+            android:textColor="@android:color/white"
+
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/unitedstatestv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:layout_weight="1"
+
+            android:text="(United States) "
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/chevronbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="4"
+            android:gravity="right"
+            android:text=">"
+            android:textColor="#DF5737"
+            android:textSize="20sp"
+
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/grey_seperating_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@android:color/black"
+
+        android:orientation="horizontal"
+        android:padding="15dp">
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+
+            android:scaleType="fitXY"
+            android:src="@drawable/phone_icon" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:inputType="phone"
+            android:text="(555) 555-5555"
+
+            android:textColor="@android:color/white" />
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/grey_seperating_line" />
+
+    <!-- <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+
+         android:background="@android:color/black"
+
+
+         android:columnCount="3"
+         android:orientation="horizontal">
+
+         <Button
+             android:background="@android:color/darker_gray"
+             android:textSize="25sp"
+             android:text="1"
+             android:textColor="@android:color/holo_blue_dark" />
+
+         <Button
+             android:background="@android:color/darker_gray"
+             android:textSize="25sp"
+             android:text="2"
+             android:textColor="@android:color/holo_blue_dark" />
+
+         <Button
+             android:background="@android:color/darker_gray"
+             android:textSize="25sp"
+             android:text="3"
+             android:textColor="@android:color/holo_blue_dark" />
+
+         <Button
+             android:background="@android:color/darker_gray"
+             android:text="4"
+             android:textSize="25sp"
+             android:textColor="@android:color/holo_blue_dark" />
+
+         <Button
+             android:background="@android:color/darker_gray"
+             android:textSize="25sp"
+             android:text="5"
+             android:textColor="@android:color/holo_blue_dark" />
+
+         <Button
+             android:background="@android:color/darker_gray"
+             android:textSize="25sp"
+             android:text="6"
+             android:textColor="@android:color/holo_blue_dark" />
+
+         <Button
+             android:background="@android:color/darker_gray"
+             android:textSize="25sp"
+             android:text="7"
+             android:textColor="@android:color/holo_blue_dark" />
+
+         <Button
+             android:background="@android:color/darker_gray"
+             android:textSize="25sp"
+             android:text="8"
+             android:textColor="@android:color/holo_blue_dark" />
+
+         <Button
+             android:background="@android:color/darker_gray"
+             android:textSize="25sp"
+             android:text="9"
+             android:textColor="@android:color/holo_blue_dark" />
+
+         <Button android:text=""
+             android:background="@android:color/black"/>
+
+         <Button
+             android:background="@android:color/darker_gray"
+             android:textSize="25sp"
+             android:text="0"
+             android:textColor="@android:color/holo_blue_dark" />
+
+         <Button android:text=""
+             android:background="@android:color/black"/>
+     </GridLayout>-->
+
+
+</LinearLayout>
+
