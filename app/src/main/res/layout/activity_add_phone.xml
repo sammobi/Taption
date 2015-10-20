@@ -4,7 +4,8 @@
     android:layout_height="fill_parent"
     android:background="@android:color/black"
     android:orientation="vertical"
-    tools:context="com.simpalm.android.taption.AddPhoneActivity">
+    tools:context="com.simpalm.android.taption.AddPhoneActivity"
+  >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -50,7 +51,7 @@
             android:gravity="center"
             android:text="Please enter your phone number so your friends\ncan find you on Taption"
             android:textColor="@android:color/darker_gray"
-            android:textSize="13sp" />
+            android:textSize="15sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -120,14 +121,16 @@
             android:scaleType="fitXY"
             android:src="@drawable/phone_icon" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+        <EditText
+            android:id="@+id/phonenumberet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:inputType="phone"
-            android:text="(555) 555-5555"
+            android:text="5555555555"
 
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white" />
 
 
     </LinearLayout>
@@ -136,6 +139,9 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@drawable/grey_seperating_line" />
+
+
+
 
     <!-- <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
          android:layout_width="match_parent"
