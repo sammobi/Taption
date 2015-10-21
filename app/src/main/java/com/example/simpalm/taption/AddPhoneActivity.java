@@ -57,10 +57,12 @@ public class AddPhoneActivity extends Activity {
                     mFormatting = true;
                     // using US formatting...
                     if (mAfter != 0) // in case back space ain't clicked...
-                        PhoneNumberUtils.formatNumber(s, PhoneNumberUtils.getFormatTypeForLocale(Locale.US));
-                    PhoneNumber numberProto = phoneUtil.parse(numberStr, "US");
+                      PhoneNumberUtils.formatNumber(s.toString());
+
+
+                  /*  PhoneNumber numberProto = phoneUtil.parse(numberStr, "US");
                     //Since you know the country you can format it as follows:
-                    System.out.println(phoneUtil.format(numberProto, PhoneNumberFormat.NATIONAL));
+                    System.out.println(phoneUtil.format(numberProto, PhoneNumberFormat.NATIONAL));*/
                     mFormatting = false;
                 }
 //                if (s.toString().startsWith("1")) {
