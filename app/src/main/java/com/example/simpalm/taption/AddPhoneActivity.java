@@ -141,7 +141,9 @@ public class AddPhoneActivity extends Activity {
         mONeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 mPhonenumberTv.setText("1");
+                break;
 
             }
         });
