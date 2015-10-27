@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.telephony.PhoneNumberFormattingTextWatcher;
 import android.telephony.PhoneNumberUtils;
 import android.text.Editable;
 import android.text.InputFilter;
@@ -14,6 +15,7 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -21,7 +23,8 @@ import java.util.Locale;
 
 public class AddPhoneActivity extends Activity {
 
-    Button mNextBtn, mONeBtn, mTwobtn, mThreeBtn, mFourBtn, mFiveBtn, mSixBtn, mSevenBtn,  mEightBtn, mNineBtn, mZeroBtn;
+    Button mNextBtn, mONeBtn, mTwobtn, mThreeBtn, mFourBtn, mFiveBtn, mSixBtn, mSevenBtn, mEightBtn, mNineBtn, mZeroBtn;
+    ImageView mBackSpaceImg;
     TextView mPlusoneTv, mUnitesStatesTv;
     LinearLayout mKeyboardLl;
     EditText mPhonenumberTv;
@@ -38,19 +41,21 @@ public class AddPhoneActivity extends Activity {
         mPhonenumberTv = (EditText) findViewById(R.id.phonenumberet);
         mUnitesStatesTv = (TextView) findViewById(R.id.unitedstatestv);
         mKeyboardLl = (LinearLayout) findViewById(R.id.keyboardll);
-        mONeBtn = (Button)findViewById(R.id.btn1);
-        mTwobtn = (Button)findViewById(R.id.btn2);
-        mZeroBtn = (Button)findViewById(R.id.btn0);
+        mONeBtn = (Button) findViewById(R.id.btn1);
+        mTwobtn = (Button) findViewById(R.id.btn2);
+        mZeroBtn = (Button) findViewById(R.id.btn0);
 
-        mThreeBtn = (Button)findViewById(R.id.btn3);
-        mFourBtn = (Button)findViewById(R.id.btn4);
-        mFiveBtn = (Button)findViewById(R.id.btn5);
+        mThreeBtn = (Button) findViewById(R.id.btn3);
+        mFourBtn = (Button) findViewById(R.id.btn4);
+        mFiveBtn = (Button) findViewById(R.id.btn5);
 
-        mSixBtn = (Button)findViewById(R.id.btn6);
-        mSevenBtn = (Button)findViewById(R.id.btn7);
-        mEightBtn = (Button)findViewById(R.id.btn8);
-        mNineBtn = (Button)findViewById(R.id.btn9);
-        mPhonenumberTv.addTextChangedListener(new TextWatcher() {
+        mSixBtn = (Button) findViewById(R.id.btn6);
+        mSevenBtn = (Button) findViewById(R.id.btn7);
+        mEightBtn = (Button) findViewById(R.id.btn8);
+        mNineBtn = (Button) findViewById(R.id.btn9);
+        mBackSpaceImg = (ImageView) findViewById(R.id.imgbackspace);
+
+                /*.addTextChangedListener(new TextWatcher() {
             private boolean mFormatting; // this is a flag which prevents the  stack overflow.
             private int mAfter;
 
@@ -69,26 +74,19 @@ public class AddPhoneActivity extends Activity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                // Make sure to ignore calls to afterTextChanged caused by the work done below
-                if (!mFormatting) {
-                    mFormatting = true;
-                    // using US formatting...
-                    if (mAfter != 0) // in case back space ain't clicked...
-                        PhoneNumberUtils.formatNumber(s.toString());
 
 
-                  /*  PhoneNumber numberProto = phoneUtil.parse(numberStr, "US");
+
+                    PhoneNumber numberProto = phoneUtil.parse(numberStr, "US");
                     //Since you know the country you can format it as follows:
-                    System.out.println(phoneUtil.format(numberProto, PhoneNumberFormat.NATIONAL));*/
+                    System.out.println(phoneUtil.format(numberProto, PhoneNumberFormat.NATIONAL));
                     mFormatting = false;
                 }
-//                if (s.toString().startsWith("1")) {
-//                    mMobileEt.setFilters(new InputFilter[]{new InputFilter.LengthFilter(14)});
-//                } else
-                mPhonenumberTv.setFilters(new InputFilter[]{new InputFilter.LengthFilter(12)});
+
+                mPhonenumberTv.setFilters(new InputFilter[]{new InputFilter.LengthFilter(10)});
             }
         });
-
+*/
 
         mPlusoneTv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -118,7 +116,7 @@ public class AddPhoneActivity extends Activity {
         mPhonenumberTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-             mKeyboardLl.setVisibility(View.VISIBLE);
+                mKeyboardLl.setVisibility(View.VISIBLE);
 
                 // Hide native keyboard on click of the button
 
@@ -142,14 +140,109 @@ public class AddPhoneActivity extends Activity {
             @Override
             public void onClick(View v) {
 
-                mPhonenumberTv.setText("1");
-                break;
+                mPhonenumberTv.setText(mPhonenumberTv.getText() + "1");
+
+
+            }
+        });
+        mTwobtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                mPhonenumberTv.setText(mPhonenumberTv.getText() + "2");
+
 
             }
         });
 
-    }
+        mThreeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                mPhonenumberTv.setText(mPhonenumberTv.getText() + "3");
+
+
+            }
+        });
+        mFourBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                mPhonenumberTv.setText(mPhonenumberTv.getText() + "4");
+
+
+            }
+        });
+        mFiveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                mPhonenumberTv.setText(mPhonenumberTv.getText() + "5");
+
+
+            }
+        });
+        mSixBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                mPhonenumberTv.setText(mPhonenumberTv.getText() + "6");
+
+
+            }
+        });
+        mSevenBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                mPhonenumberTv.setText(mPhonenumberTv.getText() + "7");
+
+
+            }
+        });
+        mEightBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                mPhonenumberTv.setText(mPhonenumberTv.getText() + "8");
+
+
+            }
+        });
+        mNineBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                mPhonenumberTv.setText(mPhonenumberTv.getText() + "9");
+
+
+            }
+        });
+
+        mZeroBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                mPhonenumberTv.setText(mPhonenumberTv.getText() + "0");
+
+
+            }
+        });
+
+
+        mBackSpaceImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int length = mPhonenumberTv.getText().length();
+                if (length > 0) {
+                    mPhonenumberTv.getText().delete(length - 1, length);
+                }
+
+            }
+        });
+
+
+    }
 
 
     // back button pressed visiblity gone of certain component
