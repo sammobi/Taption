@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.PhoneNumberFormattingTextWatcher;
 import android.telephony.PhoneNumberUtils;
@@ -131,6 +132,13 @@ public class AddPhoneActivity extends Activity {
             public void onClick(View v) {
 
                 mKeyboardLl.setVisibility(View.GONE);
+                AlertDialog.Builder alert = new AlertDialog.Builder(AddPhoneActivity.this);
+                alert.setTitle("Phone number verification");
+                alert.setMessage("Is this your correct phone number?");
+                alert.setPositiveButton("YES", null);
+                alert.setNegativeButton("NO" ,null);
+                alert.show();
+
 
 
             }

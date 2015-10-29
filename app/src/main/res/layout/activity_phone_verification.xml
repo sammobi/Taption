@@ -1,0 +1,114 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/black"
+    android:orientation="vertical"
+    tools:context="com.simpalm.android.taption.PhoneVerificationActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#0CBCF5"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="5dp"
+            android:layout_gravity="center"
+            android:background="@drawable/back_arrow"
+            android:scaleType="fitCenter"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2F2F2F"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="We have sent you an SMS with a code to the\nnumber above.\n\nTo complete your phone number verification,\nplease enter your 6 digit activation code."
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+               android:paddingRight="10dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="25sp"
+                android:textColor="@android:color/holo_red_dark"
+                android:textStyle="bold"
+                android:text=" 1"
+
+                android:background="@drawable/enter_code_field" />
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:paddingRight="10dp"
+                android:background="@drawable/enter_code_field" />
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:paddingRight="10dp"
+
+                android:background="@drawable/enter_code_field" />
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:paddingRight="10dp"
+                android:background="@drawable/enter_code_field" />
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:paddingRight="10dp"
+                android:background="@drawable/enter_code_field" />
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/enter_code_field" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/grey_seperating_line" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <include
+        android:id="@+id/keyboardll"
+        layout="@layout/number_picker"
+
+        android:gravity="bottom" />
+</LinearLayout>

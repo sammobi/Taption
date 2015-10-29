@@ -4,4 +4,8 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="addphonenumber">Add Phone Number</string>
+    <string name="title_activity_phone_verification">PhoneVerificationActivity</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_forgot_password">ForgotPasswordActivity</string>
+    <string name="title_activity_signup">SignupActivity</string>
 </resources>
