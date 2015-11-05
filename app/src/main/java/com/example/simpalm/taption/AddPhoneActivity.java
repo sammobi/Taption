@@ -2,25 +2,17 @@ package com.example.simpalm.taption;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.telephony.PhoneNumberFormattingTextWatcher;
-import android.telephony.PhoneNumberUtils;
-import android.text.Editable;
-import android.text.InputFilter;
-import android.text.TextWatcher;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import java.util.Locale;
+import android.widget.Toast;
 
 public class AddPhoneActivity extends Activity {
 
@@ -28,7 +20,7 @@ public class AddPhoneActivity extends Activity {
     ImageView mBackSpaceImg;
     TextView mPlusoneTv, mUnitesStatesTv;
     LinearLayout mKeyboardLl;
-    EditText mPhonenumberTv;
+    EditText mPhonenumberEt;
     private android.content.Context context;
 
 
@@ -39,7 +31,7 @@ public class AddPhoneActivity extends Activity {
 
         mNextBtn = (Button) findViewById(R.id.nextbtn);
         mPlusoneTv = (TextView) findViewById(R.id.plusonetv);
-        mPhonenumberTv = (EditText) findViewById(R.id.phonenumberet);
+        mPhonenumberEt = (EditText) findViewById(R.id.phonenumberet);
         mUnitesStatesTv = (TextView) findViewById(R.id.unitedstatestv);
         mKeyboardLl = (LinearLayout) findViewById(R.id.keyboardll);
         mONeBtn = (Button) findViewById(R.id.btn1);
@@ -56,38 +48,6 @@ public class AddPhoneActivity extends Activity {
         mNineBtn = (Button) findViewById(R.id.btn9);
         mBackSpaceImg = (ImageView) findViewById(R.id.imgbackspace);
 
-                /*.addTextChangedListener(new TextWatcher() {
-            private boolean mFormatting; // this is a flag which prevents the  stack overflow.
-            private int mAfter;
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                // nothing to do here..
-            }
-
-            //called before the text is changed...
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                mAfter = after; // flag to detect backspace..
-
-            }
-            //current 555-555-5555     required (555) 555-5555
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-
-
-                    PhoneNumber numberProto = phoneUtil.parse(numberStr, "US");
-                    //Since you know the country you can format it as follows:
-                    System.out.println(phoneUtil.format(numberProto, PhoneNumberFormat.NATIONAL));
-                    mFormatting = false;
-                }
-
-                mPhonenumberTv.setFilters(new InputFilter[]{new InputFilter.LengthFilter(10)});
-            }
-        });
-*/
 
         mPlusoneTv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,7 +74,7 @@ public class AddPhoneActivity extends Activity {
             }
         });
 
-        mPhonenumberTv.setOnClickListener(new View.OnClickListener() {
+        mPhonenumberEt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mKeyboardLl.setVisibility(View.VISIBLE);
@@ -130,124 +90,185 @@ public class AddPhoneActivity extends Activity {
         mNextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 mKeyboardLl.setVisibility(View.GONE);
-                AlertDialog.Builder alert = new AlertDialog.Builder(AddPhoneActivity.this);
-                alert.setTitle("Phone number verification");
-                alert.setMessage("Is this your correct phone number?");
-                alert.setPositiveButton("YES", null);
-                alert.setNegativeButton("NO" ,null);
-                alert.show();
+                mPhonenumberEt.getText().toString();
+                if (mPhonenumberEt.getText().toString().isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "Please enter your phone number",
+                            Toast.LENGTH_LONG).show();
+                } else {
+
+                    AlertDialog.Builder alert = new AlertDialog.Builder(AddPhoneActivity.this);
+                    alert.setTitle("Phone number verification");
+                    alert.setMessage("Is this your correct phone number?");
+                    alert.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent intent = new Intent(getApplicationContext(), PhoneVerificationActivity.class);
 
 
-
-            }
-        });
-
-        mONeBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                mPhonenumberTv.setText(mPhonenumberTv.getText() + "1");
+                            startActivity(intent);
+                            finish();
 
 
-            }
-        });
-        mTwobtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                mPhonenumberTv.setText(mPhonenumberTv.getText() + "2");
-
-
-            }
-        });
-
-        mThreeBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                mPhonenumberTv.setText(mPhonenumberTv.getText() + "3");
-
-
-            }
-        });
-        mFourBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                mPhonenumberTv.setText(mPhonenumberTv.getText() + "4");
-
-
-            }
-        });
-        mFiveBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                mPhonenumberTv.setText(mPhonenumberTv.getText() + "5");
-
-
-            }
-        });
-        mSixBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                mPhonenumberTv.setText(mPhonenumberTv.getText() + "6");
-
-
-            }
-        });
-        mSevenBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                mPhonenumberTv.setText(mPhonenumberTv.getText() + "7");
-
-
-            }
-        });
-        mEightBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                mPhonenumberTv.setText(mPhonenumberTv.getText() + "8");
-
-
-            }
-        });
-        mNineBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                mPhonenumberTv.setText(mPhonenumberTv.getText() + "9");
-
-
-            }
-        });
-
-        mZeroBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                mPhonenumberTv.setText(mPhonenumberTv.getText() + "0");
-
-
-            }
-        });
-
-
-        mBackSpaceImg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int length = mPhonenumberTv.getText().length();
-                if (length > 0) {
-                    mPhonenumberTv.getText().delete(length - 1, length);
+                        }
+                    });
+                    alert.setNegativeButton("NO", null);
+                    alert.show();
                 }
-
             }
+
+
         });
+
+
+        mONeBtn.setOnClickListener(new View.OnClickListener()
+
+                                   {
+                                       @Override
+                                       public void onClick(View v) {
+
+                                           mPhonenumberEt.setText(mPhonenumberEt.getText() + "1");
+
+
+                                       }
+                                   }
+
+        );
+        mTwobtn.setOnClickListener(new View.OnClickListener()
+
+                                   {
+                                       @Override
+                                       public void onClick(View v) {
+
+                                           mPhonenumberEt.setText(mPhonenumberEt.getText() + "2");
+
+
+                                       }
+                                   }
+
+        );
+
+        mThreeBtn.setOnClickListener(new View.OnClickListener()
+
+                                     {
+                                         @Override
+                                         public void onClick(View v) {
+
+                                             mPhonenumberEt.setText(mPhonenumberEt.getText() + "3");
+
+
+                                         }
+                                     }
+
+        );
+        mFourBtn.setOnClickListener(new View.OnClickListener()
+
+                                    {
+                                        @Override
+                                        public void onClick(View v) {
+
+                                            mPhonenumberEt.setText(mPhonenumberEt.getText() + "4");
+
+
+                                        }
+                                    }
+
+        );
+        mFiveBtn.setOnClickListener(new View.OnClickListener()
+
+                                    {
+                                        @Override
+                                        public void onClick(View v) {
+
+                                            mPhonenumberEt.setText(mPhonenumberEt.getText() + "5");
+
+
+                                        }
+                                    }
+
+        );
+        mSixBtn.setOnClickListener(new View.OnClickListener()
+
+                                   {
+                                       @Override
+                                       public void onClick(View v) {
+
+                                           mPhonenumberEt.setText(mPhonenumberEt.getText() + "6");
+
+
+                                       }
+                                   }
+
+        );
+        mSevenBtn.setOnClickListener(new View.OnClickListener()
+
+                                     {
+                                         @Override
+                                         public void onClick(View v) {
+
+                                             mPhonenumberEt.setText(mPhonenumberEt.getText() + "7");
+
+
+                                         }
+                                     }
+
+        );
+        mEightBtn.setOnClickListener(new View.OnClickListener()
+
+                                     {
+                                         @Override
+                                         public void onClick(View v) {
+
+                                             mPhonenumberEt.setText(mPhonenumberEt.getText() + "8");
+
+
+                                         }
+                                     }
+
+        );
+        mNineBtn.setOnClickListener(new View.OnClickListener()
+
+                                    {
+                                        @Override
+                                        public void onClick(View v) {
+
+                                            mPhonenumberEt.setText(mPhonenumberEt.getText() + "9");
+
+
+                                        }
+                                    }
+
+        );
+
+        mZeroBtn.setOnClickListener(new View.OnClickListener()
+
+                                    {
+                                        @Override
+                                        public void onClick(View v) {
+
+                                            mPhonenumberEt.setText(mPhonenumberEt.getText() + "0");
+
+
+                                        }
+                                    }
+
+        );
+
+// delete one text at a time on backspace
+        mBackSpaceImg.setOnClickListener(new View.OnClickListener()
+
+                                         {
+                                             @Override
+                                             public void onClick(View v) {
+                                                 int length = mPhonenumberEt.getText().length();
+                                                 if (length > 0) {
+                                                     mPhonenumberEt.getText().delete(length - 1, length);
+                                                 }
+
+                                             }
+                                         }
+
+        );
 
 
     }
@@ -267,6 +288,5 @@ public class AddPhoneActivity extends Activity {
 
 
     }
-
-
 }
+

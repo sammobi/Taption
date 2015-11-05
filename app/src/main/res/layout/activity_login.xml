@@ -83,7 +83,7 @@
             android:background="#09B4F4"
             android:drawablePadding="5dp"
 
-            android:drawableRight="@drawable/signup_btn"
+            android:drawableRight="@drawable/signup_btn_v2"
             android:gravity="left|center_vertical"
             android:paddingLeft="15dp"
             android:text="SIGN UP"

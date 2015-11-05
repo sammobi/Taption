@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Taption</string>
+    <string-array name="choose_gender">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
