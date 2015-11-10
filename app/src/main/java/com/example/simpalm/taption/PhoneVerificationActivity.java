@@ -68,6 +68,8 @@ public class PhoneVerificationActivity extends Activity implements View.OnClickL
 
     }
 
+    int entered_value_length = 0;
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -78,6 +80,47 @@ public class PhoneVerificationActivity extends Activity implements View.OnClickL
                 startActivity(intent);
 
                 break;
+
+
+
+          /*  case R.id.btn1:
+
+                switch (entered_value_length) {
+
+                    case 0:
+                        mPhone1tv.setText("1");
+                        entered_value_length++;
+                        break;
+
+
+                    case 1:
+                        mPhone2tv.setText("1");
+                        entered_value_length++;
+                        break;
+
+
+                    case 2:
+                        mPhone3tv.setText("1");
+                        entered_value_length++;
+                        break;
+
+                    case 3:
+                        mPhone4tv.setText("1");
+                        entered_value_length++;
+                        break;
+
+                    case 4:
+                        mPhone5tv.setText("1");
+                        entered_value_length++;
+                        break;
+
+                    case 5:
+                        mPhone6tv.setText("1");
+                        entered_value_length++;
+                        break;
+
+
+                }*/
 
             case R.id.btn1:
 
@@ -300,6 +343,34 @@ public class PhoneVerificationActivity extends Activity implements View.OnClickL
                 } else if (mPhone6tv.getText().toString().isEmpty()) {
 
                     mPhone6tv.setText("4");
+                }
+                break;
+
+            case R.id.imgbackspace:
+
+                if (mPhone6tv.getText().toString().length() > 0) {
+
+                    mPhone6tv.setText("-");
+                    break;
+                } else if (mPhone5tv.getText().toString().length() > 0) {
+
+                    mPhone5tv.setText("-");
+                    break;
+                } else if (mPhone4tv.getText().toString().length() > 0) {
+
+                    mPhone4tv.setText("-");
+                    break;
+                } else if (mPhone3tv.getText().toString().length() > 0) {
+
+                    mPhone3tv.setText("-");
+                    break;
+                } else if (mPhone2tv.getText().toString().length() > 0) {
+
+                    mPhone2tv.setText("-");
+                    break;
+                } else if (mPhone1tv.getText().toString().length() > 0) {
+
+                    mPhone1tv.setText("-");
                 }
                 break;
 
