@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.simpalm.taption" >
+    package="com.example.simpalm.taption">
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
+        <uses-permission android:name="android.permission.READ_CONTACTS" />
+
         <activity
             android:name=".AddPhoneActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,20 +21,22 @@
         </activity>
         <activity
             android:name=".PhoneVerificationActivity"
-            android:label="@string/title_activity_phone_verification" >
-        </activity>
+            android:label="@string/title_activity_phone_verification"></activity>
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login" >
-        </activity>
+            android:label="@string/title_activity_login"></activity>
         <activity
             android:name=".ForgotPasswordActivity"
-            android:label="@string/title_activity_forgot_password" >
-        </activity>
+            android:label="@string/title_activity_forgot_password"></activity>
         <activity
             android:name=".SignupActivity"
-            android:label="@string/title_activity_signup" >
-        </activity>
+            android:label="@string/title_activity_signup"></activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"></activity>
+        <activity
+            android:name=".ContactsActivity"
+            android:label="@string/title_activity_contacts"></activity>
     </application>
 
 </manifest>

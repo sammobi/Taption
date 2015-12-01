@@ -6,7 +6,7 @@
     android:orientation="vertical"
     tools:context="com.simpalm.android.taption.AddPhoneActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="#0CBCF5"
@@ -16,10 +16,10 @@
         <TextView
             android:id="@+id/addphonenumbertv"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="3"
+            android:layout_height="match_parent"
             android:gravity="center"
+
+
             android:text="@string/addphonenumber"
             android:textColor="@android:color/black"
             android:textSize="15sp" />
@@ -28,14 +28,14 @@
         <Button
             android:id="@+id/nextbtn"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+
             android:background="#DF5737"
             android:text="Next"
 
             android:textColor="@android:color/white" />
-    </LinearLayout>
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -127,13 +127,13 @@
             android:layout_marginLeft="10dp"
             android:background="@color/black"
             android:hint="(555) 555-5555"
-            android:textSize="15sp"
+            android:inputType="phone"
             android:maxLength="10"
 
 
-            android:inputType="phone"
             android:textColor="@android:color/white"
-            android:textColorHint="@color/white" />
+            android:textColorHint="@color/white"
+            android:textSize="15sp" />
 
     </LinearLayout>
 
@@ -141,16 +141,17 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@drawable/grey_seperating_line" />
+
     <View
         android:layout_width="match_parent"
-        android:layout_weight="1"
         android:layout_height="0dp"
-         />
+        android:layout_weight="1" />
 
-    <include layout="@layout/number_picker"
+    <include
         android:id="@+id/keyboardll"
+        layout="@layout/number_picker"
 
-        android:gravity="bottom"/>
+        android:gravity="bottom" />
 
 
 </LinearLayout>

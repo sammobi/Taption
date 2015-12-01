@@ -6,6 +6,7 @@
     android:orientation="vertical"
     tools:context="com.simpalm.android.taption.AddPhoneActivity">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -27,107 +28,42 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-
-        >
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
-
-            android:drawableRight="@drawable/user_icon"
-            android:hint="Create Username"
-            android:padding="25dp"
-            android:textColorHint="#6A6A6A" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@drawable/grey_seperating_line" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Create Password"
-            android:padding="25dp"
-            android:textColorHint="#6A6A6A" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@drawable/grey_seperating_line" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Confirm Password"
-            android:padding="25dp"
-            android:textColorHint="#6A6A6A" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@drawable/grey_seperating_line" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Email Address"
-            android:padding="25dp"
-            android:textColorHint="#6A6A6A" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@drawable/grey_seperating_line" />
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical"
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:hint="Gender"
-                android:padding="25dp"
-                android:textColorHint="#6A6A6A" />
-
-            <Spinner
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:entries="@array/choose_gender"
-                android:textColorHint="#6A6A6A"
-
-                android:layout_weight="1"
-                android:textColor="@color/white" />
-
-
-        </LinearLayout>
-
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@drawable/grey_seperating_line" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            >
 
             <EditText
+                android:id="@+id/createusernameet"
                 android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginBottom="5dp"
 
+                android:layout_marginTop="5dp"
+                android:drawableRight="@drawable/user_icon"
+
+                android:hint="Create Username"
+                android:padding="25dp"
+                android:textColor="@color/white"
+                android:textColorHint="#6A6A6A" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/grey_seperating_line" />
+
+            <EditText
+                android:id="@+id/createpasswordet"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Age"
+                android:hint="Create Password"
+                android:inputType="textPassword"
                 android:padding="25dp"
                 android:textColorHint="#6A6A6A" />
 
@@ -136,30 +72,107 @@
                 android:layout_height="1dp"
                 android:background="@drawable/grey_seperating_line" />
 
+            <EditText
+                android:id="@+id/confirmpasswordet"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
+                android:padding="25dp"
+                android:textColorHint="#6A6A6A" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/grey_seperating_line" />
+
+            <EditText
+                android:id="@+id/enteremailet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email Address"
+                android:inputType="textEmailAddress"
+                android:padding="25dp"
+                android:textColorHint="#6A6A6A" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/grey_seperating_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/gendertv"
+                    android:layout_width="match_parent"
+
+
+                    android:layout_height="wrap_content"
+                    android:padding="25dp"
+                    android:text="Gender"
+                    android:textColor="#6A6A6A"
+                    android:textSize="20sp" />
+
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/grey_seperating_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Spinner
+                    android:id="@+id/enteragetv"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:padding="25dp"
+                    android:text="Age"
+                    android:textColor="#6A6A6A"
+                    android:textSize="20sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@drawable/grey_seperating_line" />
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/signupbtn"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+
+
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+
+                android:background="#09B4F4"
+                android:drawableRight="@drawable/signup_btn_v2"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="15dp"
+
+                android:text="SIGN UP"
+
+                android:textColorHint="@color/white" />
+
+
         </LinearLayout>
 
-
-        <Button
-            android:layout_width="match_parent"
-
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-
-
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="15dp"
-
-            android:background="#09B4F4"
-            android:drawableRight="@drawable/signup_btn_v2"
-            android:gravity="left|center_vertical"
-            android:paddingLeft="15dp"
-
-            android:text="REQUEST PASSWORD"
-
-            android:textColorHint="@color/white" />
-
-
-    </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
 

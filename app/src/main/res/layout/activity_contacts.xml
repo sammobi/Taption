@@ -1,0 +1,95 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/black"
+    android:orientation="vertical"
+    tools:context="com.simpalm.android.taption.ContactsActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#0CBCF5"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageButton
+            android:id="@+id/backarrow"
+            android:layout_width="25dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/camera_icon_header" />
+
+        <Button
+
+            android:id="@+id/contactsbtn"
+            android:layout_width="80dp"
+            android:layout_height="36dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/requestsbtn"
+            android:layout_toStartOf="@+id/requestsbtn"
+            android:background="@drawable/buttonshape"
+            android:text="Contacts"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/requestsbtn"
+            android:layout_width="80dp"
+            android:layout_height="36dp"
+            android:layout_alignTop="@+id/contactsbtn"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/buttonshape"
+            android:text="Requests"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/searchbtn"
+            android:layout_width="80dp"
+            android:layout_height="36dp"
+            android:layout_alignTop="@+id/requestsbtn"
+            android:layout_toEndOf="@+id/requestsbtn"
+            android:layout_toRightOf="@+id/requestsbtn"
+            android:background="@drawable/buttonshape"
+            android:text="Search"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp" />
+
+        <ImageView
+            android:id="@+id/logoutbtn"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/settings1"
+            android:text="Edit Number" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:background="#1B1B1B"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/search"
+            android:hint="Search Contact"
+            android:textColorHint="#6A6A6A"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+
+</LinearLayout>

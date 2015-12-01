@@ -6,47 +6,52 @@
     android:orientation="vertical"
     tools:context="com.simpalm.android.taption.PhoneVerificationActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="#0CBCF5"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="10dp">
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="18dp"
-            android:layout_gravity="center"
+        <ImageButton
+            android:id="@+id/backarrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+
+
             android:layout_marginLeft="5dp"
-            android:layout_weight="0.18"
+
             android:background="@drawable/back_arrow"
             android:scaleType="fitCenter" />
 
         <TextView
             android:id="@+id/phoneverified"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="3"
-            android:gravity="center_horizontal"
-            android:text="+1 111-111-1111"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+
+
+            android:hint="+1 111-111-1111"
             android:textSize="18sp"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/editnumberbtn"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:layout_margin="8dp"
-            android:layout_weight="1.3"
-
+            android:layout_alignParentRight="true"
             android:background="#DF5737"
+
+            android:padding="5dp"
             android:text="Edit Number"
 
             android:textColor="@android:color/white" />
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -85,7 +90,7 @@
 
                 android:gravity="center"
 
-                android:hint="-"
+                android:text="-"
                 android:textColor="@android:color/holo_red_dark"
                 android:textColorHint="@android:color/holo_red_dark"
                 android:textSize="25sp"
@@ -106,9 +111,9 @@
                 android:layout_weight="1"
                 android:background="@drawable/circle"
                 android:gravity="center"
-                android:textColor="@android:color/holo_red_dark"
+                android:text="-"
 
-                android:hint="-"
+                android:textColor="@android:color/holo_red_dark"
                 android:textColorHint="@android:color/holo_red_dark"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -125,9 +130,9 @@
                 android:layout_weight="1"
                 android:background="@drawable/circle"
                 android:gravity="center"
-                android:textColor="@android:color/holo_red_dark"
+                android:text="-"
 
-                android:hint="-"
+                android:textColor="@android:color/holo_red_dark"
                 android:textColorHint="@android:color/holo_red_dark"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -141,12 +146,12 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textColor="@android:color/holo_red_dark"
-
                 android:layout_weight="1"
+
                 android:background="@drawable/circle"
                 android:gravity="center"
-                android:hint="-"
+                android:text="-"
+                android:textColor="@android:color/holo_red_dark"
                 android:textColorHint="@android:color/holo_red_dark"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -159,13 +164,13 @@
                 android:id="@+id/phonever5"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textColor="@android:color/holo_red_dark"
-
                 android:layout_gravity="center"
+
                 android:layout_weight="1"
                 android:background="@drawable/circle"
                 android:gravity="center"
-                android:hint="-"
+                android:text="-"
+                android:textColor="@android:color/holo_red_dark"
                 android:textColorHint="@android:color/holo_red_dark"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -179,12 +184,12 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textColor="@android:color/holo_red_dark"
-
                 android:layout_weight="1"
+
                 android:background="@drawable/circle"
                 android:gravity="center"
-                android:hint="-"
+                android:text="-"
+                android:textColor="@android:color/holo_red_dark"
                 android:textColorHint="@android:color/holo_red_dark"
                 android:textSize="25sp"
                 android:textStyle="bold" />

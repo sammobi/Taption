@@ -8,6 +8,8 @@
     tools:context="com.example.simpalm.taption.LoginActivity">
 
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -26,6 +28,9 @@
 
     </LinearLayout>
 
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -34,23 +39,29 @@
         android:orientation="vertical">
 
         <EditText
+            android:id="@+id/usernameet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Username"
             android:padding="15dp"
+            android:textColor="@android:color/white"
             android:textColorHint="#6A6A6A" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/grey_seperating_line" />
+            android:background="@drawable/grey_seperating_line"
+            android:focusableInTouchMode="true" />
 
         <EditText
-            android:layout_width="match_parent"
+            android:id="@+id/passwordet"
 
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
+            android:inputType="textPassword"
             android:padding="15dp"
+            android:textColor="@android:color/white"
             android:textColorHint="#6A6A6A" />
 
         <View
@@ -59,8 +70,9 @@
             android:background="@drawable/grey_seperating_line" />
 
         <Button
-            android:layout_width="match_parent"
+            android:id="@+id/loginbtn"
 
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
@@ -74,8 +86,9 @@
             android:textColorHint="@color/white" />
 
         <Button
-            android:layout_width="match_parent"
+            android:id="@+id/signupbtn"
 
+            android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
@@ -91,6 +104,7 @@
             android:textColorHint="@color/white" />
 
         <TextView
+            android:id="@+id/forgotpasstv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -100,6 +114,6 @@
             android:text="Forgot Password?"
             android:textColor="@color/white" />
     </LinearLayout>
-
+    </ScrollView>
 
 </LinearLayout>

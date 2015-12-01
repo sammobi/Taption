@@ -1,0 +1,272 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+
+    android:orientation="vertical"
+
+
+    tools:context="com.simpalm.android.taption.SettingsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#0CBCF5"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+
+        <ImageButton
+            android:id="@+id/backarrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+
+
+            android:layout_marginLeft="5dp"
+
+            android:background="@drawable/back_arrow" />
+
+        <TextView
+            android:id="@+id/settingstv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+
+
+            android:text="Settings"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/logoutbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/power_btn"
+
+
+            android:text="Edit Number"
+
+            android:textColor="@android:color/white" />
+
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#1B1B1B"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/usernametv"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:padding="20dp"
+
+                android:layout_weight="1"
+
+                android:text="Username"
+
+                android:textColor="#6A6A6A" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/grey_seperating_line" />
+
+            <TextView
+                android:id="@+id/mobilenumbertv"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:padding="20dp"
+                android:layout_weight="1"
+
+                android:text="Mobile Number"
+                android:textColor="#6A6A6A" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/grey_seperating_line" />
+
+            <TextView
+                android:id="@+id/emailtv"
+                android:layout_weight="1"
+
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+
+                android:padding="20dp"
+                android:text="Email"
+                android:textColor="#6A6A6A" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/grey_seperating_line" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+
+                >
+
+                <TextView
+                    android:id="@+id/soundstv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:padding="20dp"
+
+                    android:text="Sounds"
+                    android:textColor="#6A6A6A" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/switch_on"
+
+                    android:padding="20dp" />
+
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/grey_seperating_line" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+
+                >
+
+                <TextView
+                    android:id="@+id/sendmetapstv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:padding="20dp"
+
+                    android:text="Send me Taps"
+                    android:textColor="#6A6A6A" />
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+
+
+                    android:padding="20dp" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/grey_seperating_line" />
+
+            <TextView
+                android:id="@+id/privacypolicytv"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:padding="20dp"
+                android:layout_weight="1"
+
+
+                android:text="Privacy Policy"
+
+                android:textColor="#6A6A6A" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/grey_seperating_line" />
+
+            <TextView
+                android:id="@+id/termsofusetv"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:padding="20dp"
+                android:layout_weight="1"
+
+                android:text="Terms of Use"
+                android:textColor="#6A6A6A" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/grey_seperating_line" />
+
+            <TextView
+                android:id="@+id/faqtv"
+                android:layout_weight="1"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:padding="20dp"
+                android:text="FAQ"
+                android:textColor="#6A6A6A" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/grey_seperating_line" />
+
+            <TextView
+                android:id="@+id/userguidetv"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+
+                android:padding="20dp"
+                android:text="User's Guide"
+                android:textColor="#6A6A6A" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:background="@android:color/black" />
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#0CBCF5"
+
+                android:padding="10dp">
+
+            </RelativeLayout>
+
+
+
+
+            />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+</LinearLayout>
+

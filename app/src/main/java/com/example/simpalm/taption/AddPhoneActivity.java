@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.telephony.PhoneNumberFormattingTextWatcher;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -21,6 +22,11 @@ public class AddPhoneActivity extends Activity {
     TextView mPlusoneTv, mUnitesStatesTv;
     LinearLayout mKeyboardLl;
     EditText mPhonenumberEt;
+
+    public final static String MESSAGE_KEY = "com.example.simpalm.taption.message_key";
+
+    // PhoneNumberFormattingTextWatcher mPhoneWatcher = new PhoneNumberFormattingTextWatcher();
+
     private android.content.Context context;
 
 
@@ -84,8 +90,12 @@ public class AddPhoneActivity extends Activity {
                 InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
                 imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
 
+
             }
         });
+
+
+        this.mPhonenumberEt.addTextChangedListener(new PhoneNumberFormattingTextWatcher("US"));
 
         mNextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,12 +113,15 @@ public class AddPhoneActivity extends Activity {
                     alert.setPositiveButton("YES", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            Intent intent = new Intent(getApplicationContext(), PhoneVerificationActivity.class);
+                          /*  Intent intent = new Intent(AddPhoneActivity.this, PhoneVerificationActivity.class);
 
 
                             startActivity(intent);
-                            finish();
-
+                            finish();*/
+                            String message = mPhonenumberEt.getText().toString();
+                            Intent intent = new Intent(AddPhoneActivity.this, PhoneVerificationActivity.class);
+                            intent.putExtra(MESSAGE_KEY, message);
+                            startActivity(intent);
 
                         }
                     });
